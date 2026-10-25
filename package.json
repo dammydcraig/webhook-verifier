@@ -1,0 +1,41 @@
+{
+  "name": "webhook-verifier",
+  "version": "0.1.0",
+  "description": "Verify signed webhooks safely: timing-safe HMAC checks, replay protection, secret rotation and idempotent processing.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Damilola Craig <dammydcraig@gmail.com> (https://dammycraig.ihub.website)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dammydcraig/webhook-verifier.git"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "files": [
+    "dist/src"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test --test-reporter=spec \"test/**/*.test.ts\"",
+    "example:server": "node --import tsx examples/server.ts",
+    "example:send": "node --import tsx examples/send.ts"
+  },
+  "keywords": [
+    "webhook",
+    "hmac",
+    "signature",
+    "idempotency",
+    "fintech",
+    "payments",
+    "security"
+  ],
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}
